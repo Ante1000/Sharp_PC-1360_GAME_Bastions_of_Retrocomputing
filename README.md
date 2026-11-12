@@ -28,7 +28,7 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 - Place names and treasures were shortened to fit 24 characters.
 - The PC-1360 is slow: the routines used all the time (melody, key, screen) are at the start of the program (jumps are
   found from the first line), numbers are typed without `(MAX n)` and each digit is printed at once, the pauses
-  (`WAIT`) are about 35% of the PC-1600 ones, the surrender key loop uses no `FOR`/`NEXT`.
+  (`WAIT`) are about 35% of the PC-1600 ones, the key check on the round screen is a plain `FOR G=1 TO 10` loop.
 
 ## Files
 
