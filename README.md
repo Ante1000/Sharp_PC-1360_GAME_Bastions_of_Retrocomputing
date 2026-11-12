@@ -22,7 +22,7 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 - 24 columns: shorter texts, some messages on two lines, fight animation 12+12 characters, `CURSOR x,y` 0-23 / 0-3.
 - Variables: two-letter simple variables (`TK`, `ZW`, ...) are used directly (PC-1360 BASIC needs no `DIM` for them).
 - `WAIT n` is n/59 s on the PC-1360 (n/64 s on the PC-1600): the pauses are converted.
-- `RESTORE` uses line number - 1, so it works with either "DATA line >= n" or "> n".
+- `RESTORE n` needs an existing line n (it points to the DATA at or after n): the game uses the number of the DATA line itself.
 - `BEEP`: the melodies are recomputed for the PC-1360 tone scale (tone t becomes about 1.19 t - 22.5, durations are
   unchanged). This assumes that tone 61 of the PC-1500 melody is A5 (880 Hz): not verified, see the test program.
 - Place names and treasures were shortened to fit 24 characters.
