@@ -4,8 +4,8 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 (Sharp PC-1500) to the **Sharp PC-1360** (4 lines of 24 characters), derived from the
 [PC-1600 version](https://github.com/Ante1000/Sharp_PC-1600_GAME_Bastions_of_Retrocomputing). The algorithm is the same.
 
-> **Status: work in progress, not yet tested on a real PC-1360.** The tape recording (WAV) and the
-> instructions are not made yet. For the rules see the instructions of the PC-1600 version.
+> **Status: work in progress, not yet tested on a real PC-1360.** The instructions are not made yet;
+> for the rules see the instructions of the PC-1600 version. Run the test program first (see Files).
 
 ## Screen (24 x 4)
 
@@ -32,7 +32,30 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 |---|---|
 | `Basic/bastions_of_retrocomputing-v2.6-pc1360.txt` | the program (BASIC listing, with REM lines) |
 | `Basic/bastions_of_retrocomputing-v2.6-pc1360-norem.txt` | the same without REM lines (needs less memory) |
+| `wav/bastions-v2.6-pc1360.wav` | tape recording of the game (name on the tape: BASTION) |
+| `wav/pc1360_test.wav` | tape recording of the test program (name: PCTEST) |
+| `tools/` | `make_wav.sh` and the Sharp Pocket-Tools sources (`bas2img.c`, `bin2wav.c`, `wav2bin.c`, with their own license notes) |
 | `Basic/pc1360_test.txt` | short test of what the game relies on: last screen cell, string length, `RESTORE`, `WAIT`, `BEEP`, `INKEY$` speed (type it in and run it first) |
+
+## Loading from the recording
+
+1. Connect the audio output of a computer or player to the cassette input of the PC-1360 (e.g. through the CE-126P) and
+   select PRO mode.
+2. Type `CLOAD "BASTION"` [ENTER] (or `CLOAD` for the first program) and play `wav/bastions-v2.6-pc1360.wav`
+   (about 4.5 minutes). The test program is `CLOAD "PCTEST"` with `wav/pc1360_test.wav`.
+3. Select RUN mode and type `RUN`.
+
+The recording holds the program without its REM lines (9755 bytes of intermediate code).
+
+## Making a recording
+
+`tools/make_wav.sh` converts a BASIC listing into a recording with the Sharp Pocket-Tools
+(`bas2img` -> `bin2wav`, sources in `tools/`, compiled with `gcc` on first use) and reads it back with `wav2bin`
+to check that it is identical:
+
+```
+tools/make_wav.sh Basic/bastions_of_retrocomputing-v2.6-pc1360-norem.txt wav/bastions-v2.6-pc1360.wav BASTION
+```
 
 ## License
 
