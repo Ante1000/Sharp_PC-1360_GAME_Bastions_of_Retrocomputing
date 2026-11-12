@@ -26,9 +26,12 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 - `BEEP`: the melodies are recomputed for the PC-1360 tone scale (tone t becomes about 1.19 t - 22.5, durations are
   unchanged). This assumes that tone 61 of the PC-1500 melody is A5 (880 Hz): not verified, see the test program.
 - Place names and treasures were shortened to fit 24 characters.
+- On the PC-1360 a variable and its string twin share one memory slot (`G` and `G$`): reading one after writing the other
+  is ERROR 9. The program never uses the same letter as a number and as a string (`G$` is only a string, loops use `ZI`,
+  the sell key is `ZX$`).
 - The PC-1360 is slow: the routines used all the time (melody, key, screen) are at the start of the program (jumps are
   found from the first line), numbers are typed without `(MAX n)` and each digit is printed at once, the pauses
-  (`WAIT`) are about 35% of the PC-1600 ones, the key check on the round screen is a plain `FOR G=1 TO 10` loop.
+  (`WAIT`) are about 35% of the PC-1600 ones, the key check on the round screen is a plain `FOR ZI=1 TO 10` loop.
 
 ## Files
 
@@ -39,7 +42,6 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 | `wav/bastions-v2.6-pc1360.wav` | tape recording of the game (name on the tape: BASTION) |
 | `wav/pc1360_test.wav` | tape recording of the test program (name: PCTEST) |
 | `tools/` | `make_wav.sh` and the Sharp Pocket-Tools sources (`bas2img.c`, `bin2wav.c`, `wav2bin.c`, with their own license notes) |
-| `Basic/pc1360_error9.txt`, `wav/pc1360_error9.wav` | small test of the key loop to find ERROR 9 (name: ERR9) |
 | `Basic/pc1360_test.txt` | short test of what the game relies on: last screen cell, string length, `RESTORE`, `WAIT`, `BEEP`, `INKEY$` speed (type it in and run it first) |
 
 ## Loading from the recording
