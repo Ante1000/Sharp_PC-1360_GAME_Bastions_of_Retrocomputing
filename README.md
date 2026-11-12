@@ -4,8 +4,9 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 (Sharp PC-1500) to the **Sharp PC-1360** (4 lines of 24 characters), derived from the
 [PC-1600 version](https://github.com/Ante1000/Sharp_PC-1600_GAME_Bastions_of_Retrocomputing). The algorithm is the same.
 
-> **Status: work in progress, not yet tested on a real PC-1360.** The instructions are not made yet;
-> for the rules see the instructions of the PC-1600 version. Run the test program first (see Files).
+> **Status: work in progress.** The test program was run on a real PC-1360 (display, `THEN LET`, `RESTORE`, sound
+> and the `INKEY$` speed are checked and the game is adjusted to them); the game itself is not tested yet.
+> The instructions are not made yet; for the rules see the instructions of the PC-1600 version.
 
 ## Screen (24 x 4)
 
