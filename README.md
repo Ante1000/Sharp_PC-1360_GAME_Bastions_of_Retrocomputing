@@ -26,6 +26,9 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 - `BEEP`: the melodies are recomputed for the PC-1360 tone scale (tone t becomes about 1.19 t - 22.5, durations are
   unchanged). This assumes that tone 61 of the PC-1500 melody is A5 (880 Hz): not verified, see the test program.
 - Place names and treasures were shortened to fit 24 characters.
+- The PC-1360 is slow: the routines used all the time (melody, key, screen) are at the start of the program (jumps are
+  found from the first line), numbers are typed without `(MAX n)` and each digit is printed at once, the pauses
+  (`WAIT`) are about 35% of the PC-1600 ones, the surrender key loop uses no `FOR`/`NEXT`.
 
 ## Files
 
