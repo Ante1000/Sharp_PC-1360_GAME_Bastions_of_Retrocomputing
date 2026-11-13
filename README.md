@@ -6,11 +6,11 @@ Port of the strategy game [Bastions of Retrocomputing](https://github.com/Ante10
 
 > Status: verified OK on PC-1360
 ## WARNING!!!!
-**The CPU of the Sharp PC-1360 is slow and this BASIC program is quite complex.
-**As a result, the game runs SLOWLY!
+**The CPU of the Sharp PC-1360 is slow and this BASIC program is quite complex.**
+**As a result, the game runs SLOWLY!**
 ## ONLY FOR SHARP PC-1360 AND RETROCOMPUTING ENTHUSIASTS!
-**For a better gaming experience, use a Sharp PC-1500, PC-1600 or PC-E500S. 
-**Check out my other repositories for versions designed for these models. 
+**For a better gaming experience, use a Sharp PC-1500, PC-1600 or PC-E500S.**
+**Check out my other repositories for versions designed for these models.**
 
 > **For the rules see the instructions of the PC-1600 version.**
 
